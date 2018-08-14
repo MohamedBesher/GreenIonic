@@ -1,0 +1,68 @@
+page-our-collections {
+    .checkbox-md .checkbox-checked {
+      border-color: #2bc73b;
+      background-color: #2bc73b;
+  }
+  .fab-md {
+    color: #fff;
+    background-color: #1abde0;
+   }
+  .Check_1 ion-col{
+  display: inherit;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  }
+  .label-md {
+     margin:  0;
+    font-size: 12px;
+  }
+  
+  .Card_height{
+    max-height: 140px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .text-right{
+    float: right;
+    color: #909090;;
+    padding-right: 6px;
+    padding-bottom: 9px;
+    padding-top: 5px;
+  }
+  .MinOrder{
+    border: 1px dashed #f53d3d;
+    padding: 11px;
+    width: 100%;
+    margin: auto;
+    margin-top: 44px;
+    color: #f53d3d;
+  }
+  .text-left{
+    float: left;
+    padding-bottom: 9px;
+    padding-top: 5px;
+    padding-left: 6px;
+  }
+  .Products__links{
+    width: 100%;
+    padding-top: 18px;
+    text-align: center;
+  }
+  .button-Product {
+    display: inline-block;
+    width: 49%;
+    contain: strict;
+    margin: 0 !important
+  }
+  .card-content-md {
+    padding: 15px 4px !important;}
+    .card-md {
+      margin-bottom: -5px !important;
+    }
+  
+    .MarginImg{
+      margin-top: 110px;
+    }
+  }
+  

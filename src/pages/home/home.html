@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>{{'Home-title'|translate}}</ion-title>
+    <ion-buttons end>
+      <button class="Social__share">
+        <ion-icon name="share"  (click)="shareLink()"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<!-- Slider -->
+<ion-slides dir="{{dir}}" *ngIf="ImageArray && ImageArray.length>0" [autoplay]="2000" [speed]="500" [loop]="true" (ionSlideDidChange)="start()" >
+
+      <ion-slide *ngFor="let image of ImageArray">
+        <img src="{{photoUrl+image.image}}" style="width:100%; height:100%;">
+      </ion-slide>
+
+
+
+    </ion-slides>
+<!-- ./slider -->
+
+  <!-- icons -->
+  <ion-grid class="icons__home">
+    <ion-row>
+      <ion-col col-12>
+        <!-- <p>Some available services </p> -->
+      </ion-col>
+
+
+
+      <ion-col col-4 (click)="subscrip()">
+       <img src="assets/images/loading_processingtime-128.png"/>
+          <P class="text-center">   {{'Home-sub'|translate}}         </P>
+      </ion-col>
+
+      <ion-col col-4 (click)="ChoicePage()">
+        <img src="assets/images/appinstallation-128.png"/>
+          <P class="text-center"> {{'Home-order'|translate}} </P>
+      </ion-col>
+
+
+
+      <!-- <ion-col col-4 (click)="gotoDelivery()" *ngIf="this.instant_delivery_available==1">
+        <img src="assets/images/boxdeliveryshipping-128.png"/>
+        <P class="text-center"> {{'Home-conveyance'|translate}}
+          </P>
+      </ion-col>
+      <ion-col col-4 (click)="deliveryNotAvailable()" *ngIf="this.instant_delivery_available==0">
+              <img src="assets/images/Untitled-1.png"/>
+              <P class="text-center"> {{'Home-conveyance'|translate}}
+                </P>
+      </ion-col> -->
+
+      <ion-col col-4 (click)="delivery(instant_delivery_available)">
+        <img [src]="this.instant_delivery_available==1 ? 'assets/images/boxdeliveryshipping-128.png' : 'assets/images/Untitled-1.png'"/>
+        <P class="text-center"> {{'Home-conveyance'|translate}}
+          </P>
+    </ion-col>
+
+
+
+<!-- <ion-col col-12>
+  <p class="Version">version v 2.0.3</p>
+</ion-col> -->
+<!-- <ion-col col-12>
+<button ion-button full color="secondary" (click)="openModal()">popup</button>
+</ion-col> -->
+
+
+    </ion-row>
+
+  </ion-grid>
+  <!-- ./icons -->
+</ion-content>
+
+
+
+

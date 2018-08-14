@@ -1,0 +1,15 @@
+<ion-item>
+    <ion-avatar item-start>
+      <img [src]="photoUrl+detailsItems.image" class="Product__image">
+    </ion-avatar>
+  
+    <p class="truncate"> {{detailsItems.name}}</p>
+  
+          <span class="Amount" *ngIf="detailsItems.kilo_unit==1">
+            {{'CartoonDetails-Amount'|translate}}:{{detailsItems.amount}} {{'CartoonDetails-kilo'|translate}}
+          </span>
+          <span class="Amount" *ngIf="detailsItems.kilo_unit==0">
+              {{'CartoonDetails-Amount'|translate}}:{{detailsItems.amount}} {{'order-items-details-Unit'|translate}}
+            </span>
+  </ion-item>
+

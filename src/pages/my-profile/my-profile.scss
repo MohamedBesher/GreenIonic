@@ -1,0 +1,69 @@
+// page-my-profile {
+// }
+.ios,
+.md {
+  page-my-profile {
+    .bg {
+      background-image: url('../assets/images/profile-bg.png');
+      height: 165px;
+      background-size: cover; // filter: blur(1px);
+      background-position: center center;
+    }
+    .main-cnt {
+      width: 100%; // height: 700px;
+      padding: 11px;
+    }
+    .user__name {
+      margin-top: -55px;
+      padding-bottom: 25px;
+    }
+    .user__name p {
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+    .dp {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      z-index: 10;
+      background: #fff;
+      margin-top: -90px;
+      position: relative;
+      left: 50%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%);
+      box-shadow: -6px 15px 81px 3px rgba(0, 0, 0, 0.26);
+    }
+    .Rotate {
+      transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+    }
+    .Norotate {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+    }
+    .item-md_Arbic {
+      padding-right: 16px;
+    }
+    .dpArabic {
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      z-index: 10;
+      margin-top: -90px;
+      background: #fff;
+      position: relative;
+      right: 50%;
+      margin-left: -50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(50%, -50%);
+      -webkit-box-shadow: -6px 15px 81px 3px rgba(0, 0, 0, 0.26);
+      box-shadow: -6px 15px 81px 3px rgba(0, 0, 0, 0.26);
+    }
+    ion-list ion-item {
+      color: #646363;
+      background-color: #ecf0f1;
+      margin-bottom: 1px;
+    }
+  }
+}

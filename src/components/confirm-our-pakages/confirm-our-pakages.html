@@ -1,0 +1,35 @@
+<ion-item (click)="BoxDetails(box.id)">
+  <ion-avatar item-start>
+    <img [src]="photoUrl+box.image" class="Product__image" *ngIf="box.id!=0">
+    <img [src]="box.image" class="Product__image" *ngIf="box.id==0">
+  </ion-avatar>
+  <ion-fab right top class="packageSize">
+    <button ion-fab>{{box.size}} {{'OurCollection-kilo'|translate}}</button>
+  </ion-fab>
+
+  <h2> {{box.name}}</h2>
+  <p class="truncate">{{box.description}}</p>
+  <p class="details-p">
+    <!-- <span class="product-price-old">$169.00</span> -->
+    <span class="product-price">{{box.total}} {{'OurCollection-currency'|translate}}</span>
+
+  </p>
+  <span class="product-price"></span>
+  <div class="add-clients" *ngIf="box.id!=0">
+    <span class="counter">
+      <button full (click)="add(box.id,box.total); $event.stopPropagation()">+</button>
+      <span>{{counter}}</span>
+      <button full (click)="remove(box.id,box.total); $event.stopPropagation()">-</button>
+    </span>
+
+
+  </div>
+</ion-item>
+
+
+<ion-fab right bottom class="DELEte">
+
+  <button ion-button clear item-end class="delete_button" (click)="removeItem(box.id,box.total)">
+    <ion-icon name="trash"></ion-icon>
+  </button>
+</ion-fab>

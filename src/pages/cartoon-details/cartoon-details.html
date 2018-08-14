@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title> {{'CartoonDetails-Title'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<p class="CollectionElement Cartoon_name  padding-x"><b> {{'CartoonDetails-CollectionName'|translate}} : </b> {{boxName}} <span class="Cartoon_price"><b> {{'CartoonDetails-CollectionPrice'|translate}} </b> {{priceBox}}</span></p>
+
+  <ion-row>
+    <ion-col col-12 >
+       <ion-card class="Card_height" *ngFor="let detail of boxes">
+           <cartoon-details [detailsCartoon]=detail></cartoon-details>
+         </ion-card>
+
+
+      </ion-col>
+
+   </ion-row>
+
+</ion-content>
+<ion-footer *ngIf="BoxDetails">
+  <button ion-button color="secondary" full (click)="ChooseBox(BoxDetails)"> {{'CartoonDetails-choose'|translate}}</button>
+
+</ion-footer>

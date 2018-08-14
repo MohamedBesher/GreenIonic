@@ -1,0 +1,27 @@
+page-your-collection-details {
+    .Card_height{
+        max-height: 140px;
+        overflow: hidden;
+    }
+    
+    .button-Product {
+        display: inline-block;
+        width: 49%;
+        contain: strict;
+        margin: 0 !important
+    }
+    .Card_height{
+      position: relative;
+      overflow: hidden;
+    }
+    .card-md {
+      margin-bottom: -5px !important;
+    }
+    .CollectionElement{
+      padding-left: 17px;
+    }
+    .Padding-top{
+      padding-top: 25px;
+      padding-left: 17px;
+    }
+    }

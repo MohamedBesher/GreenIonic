@@ -1,0 +1,31 @@
+
+<ion-header hide-tabs>
+
+  <ion-navbar color="secondary" hideBackButton="true">
+      <ion-buttons left>
+          <button ion-button icon-only (click)="myHandlerFunction()" class="my-style-for-modal">
+              <ion-icon name="arrow-back"></ion-icon>
+          </button>
+      </ion-buttons>
+    <ion-title>{{'selectCollection-title'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="card-background-page">
+  <p class="padding__left">{{'selectCollection-selectGroups'|translate}}</p>
+  <ion-card (click)="makeOrder(1)">
+    <img src="assets/images/1-.png"/>
+    <div class="card-title Groups">{{'selectCollection-OurGroups'|translate}}</div>
+  </ion-card>
+
+  <ion-card (click)="makeOrder(2)">
+    <img src="assets/images/2-.png"/>
+    <div class="card-title Collections">{{'selectCollection-YourGroups'|translate}}</div>
+  </ion-card>
+
+  
+
+
+</ion-content>

@@ -1,0 +1,71 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{ 'confirmDelivery-title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+<p class="CollectionElement padding-x">{{ 'confirmDelivery-subTitle' | translate }}:</p>
+  <ion-row *ngIf="selected_Items.length >= 0">
+    <ion-col col-12 *ngFor="let item of selected_Items">
+           <item  [item]="item"
+            (change_Kilo_count)="change_Kilo_count($event)" 
+           (remove_from_list)="remove_from_list($event)" 
+           [selected_value]="item.count"></item>
+      </ion-col>    
+   </ion-row>
+
+   <ion-row *ngIf="selected_Items.length == 0">
+      <div class="EmptyStatus" >
+        <p>
+          {{'noItemsInOrder' | translate}}
+        </p>
+        </div>  
+      </ion-row>
+<ion-row>
+ <ion-col  col-12 class="Padding-top">
+        <a class="margin-x" (click)="edit_items()">+ {{ 'confirmDelivery-edit-items' | translate }}</a>
+      </ion-col>
+  
+</ion-row>
+</ion-content>
+
+<ion-footer >
+
+
+
+  <ion-row>
+    <ion-col col-6>
+        <span > {{ 'ConfirmOurPakages-orderPrice' | translate }}:</span>
+    </ion-col>
+    <ion-col col-6 class="text-right">
+        <span >  {{this.selected_Items_total}} {{ 'OurCollection-currency' | translate }}</span>
+    </ion-col>
+    <ion-col col-6>
+        <span >{{ 'ConfirmOurPakages-DeliveryPrice' | translate }}:</span>
+    </ion-col>
+    <ion-col col-6 class="text-right">
+        <span >{{this.DeliveryPrice}} {{ 'OurCollection-currency' | translate }}</span>
+    </ion-col>
+    <ion-col col-6>
+        <span >{{ 'ConfirmOurPakages-TOTAL' | translate }} :</span>
+    </ion-col>
+    <ion-col col-6 class="text-right">
+        <span >{{this.DeliveryPrice + this.selected_Items_total}} {{ 'OurCollection-currency' | translate }}</span>
+    </ion-col>
+    <ion-col col-6>
+      <button ion-button color="secondary" [disabled]="selected_Items.length==0" full (click)="confirm()" >{{ 'complete' | translate }} </button>      </ion-col>
+    <ion-col col-6>
+        <button ion-button color="danger" (click)="back()"full>{{ 'cancel' | translate }}</button>
+      </ion-col>
+  </ion-row>
+</ion-footer>
+
+
+
+
+
+
+  

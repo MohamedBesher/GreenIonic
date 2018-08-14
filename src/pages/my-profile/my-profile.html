@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>{{ 'MyProfile-Profile' | translate }}</ion-title>
+    <ion-buttons end>
+      <button class="Social__share">
+        <ion-icon name="share"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content profile-parallax>
+  <div class="bg">
+  </div>
+
+  <div class="main-cnt">
+    <img src="assets/images/logo-2.png" [ngClass]="(this.platform.isRTL)? 'dpArabic' : 'dp'">
+    <div text-center class="user__name">
+      <p>{{userName}}</p>
+      <a (click)="EditPage()">{{ 'MyProfile-EditProfile' | translate }}</a>
+    </div>
+
+    <ion-list no-lines>
+      <ion-item (click)="ContactUs()">
+        <ion-icon name="mail" item-start></ion-icon>
+        {{ 'MyProfile-ContactUs' | translate }}
+        <!-- <ion-icon name="arrow-dropright" item-end [ngClass]="(this.platform.isRTL)? 'Rotate' : 'Norotate'"></ion-icon> -->
+      </ion-item>
+      <ion-item (click)="AboutUS()">
+        <ion-icon name="information-circle" item-start></ion-icon>
+        {{ 'MyProfile-AboutUs' | translate }}
+        <!-- <ion-icon name="arrow-dropright" item-end [ngClass]="(this.platform.isRTL)? 'Rotate' : 'Norotate'"></ion-icon> -->
+      </ion-item>
+      <ion-item (click)="changeDirection()">
+        <ion-icon name="sync" item-start></ion-icon>
+        {{ 'MyProfile-Language' | translate }}
+        <!-- <ion-icon name="arrow-dropright" item-end [ngClass]="(this.platform.isRTL)? 'Rotate' : 'Norotate'"></ion-icon> -->
+      </ion-item>
+      <ion-item (click)="LogOut()">
+        <ion-icon name="log-out" item-start></ion-icon>
+        {{ 'MyProfile-logout' | translate }}
+        <!-- <ion-icon name="arrow-dropright" item-end [ngClass]="(this.platform.isRTL)? 'Rotate' : 'Norotate'"></ion-icon> -->
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

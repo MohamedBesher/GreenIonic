@@ -1,0 +1,52 @@
+<ion-card class="Card_height" >
+
+<ion-item>
+  <ion-avatar item-start>
+    <img [src]="photoUrl+item.image" class="Product__image" 
+    onError="this.src='assets/images/default.png';">
+  </ion-avatar>
+  <ion-fab right top class="Recycle">
+
+    <button ion-button clear item-end class="delete_button" (click)="remove_list(item.id)">  <ion-icon name="trash"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <p class="truncate"> {{item.name}} </p>
+  <span class="Kilo">{{ item.kilo_unit==1 ? ('per-kilo' | translate): ('per-unit'| translate)   }}</span>
+
+        <!-- <span class="Amount">{{ 'amount' | translate }}:{{item.count}} {{ 'per-kilo' | translate }}</span> -->
+        <p class="details-p">
+
+          <span *ngIf="order_type==1 && item.deliever_priceAfterDiscount!=0" class="product-price-old">{{item.deliever_price}} {{ 'OurCollection-currency' | translate }} </span>
+          <span *ngIf="order_type==1 && item.deliever_priceAfterDiscount!=0" class="product-price">{{item.deliever_priceAfterDiscount}}  {{ 'OurCollection-currency' | translate }}</span>
+
+          <span *ngIf="order_type==1 && item.deliever_priceAfterDiscount==0" class="product-price">{{item.deliever_price}} {{ 'OurCollection-currency' | translate }} </span>
+
+          <span *ngIf="order_type==2" class="product-price">{{item.price}} {{ 'OurCollection-currency' | translate }} </span>
+
+
+         
+
+          
+        </p>
+        <span class="product-price"></span>
+        <div class="add-clients" >
+            <span class="counter">
+              <button full (click)="add(item.id)">+</button>
+              <span>{{counter}}</span>
+              <button full (click)="remove(item.id)">-</button>
+            </span>
+
+
+          </div>
+
+
+</ion-item>
+</ion-card>
+
+
+
+
+
+
+

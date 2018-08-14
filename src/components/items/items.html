@@ -1,0 +1,38 @@
+<ion-item>
+  <ion-avatar item-start>
+    <img src="assets/images/8.png" class="Product__image">
+  </ion-avatar>
+  <ion-fab right top class="Recycle">
+
+    <button ion-button clear item-end class="delete_button">  <ion-icon name="trash"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <p class="truncate"> pepper</p>
+        <span class="Amount">Amount:2.5 Kilo</span>
+        <p class="details-p">
+          <span class="product-price-old">$169.00</span>
+          <span class="product-price">$139.98</span>
+
+        </p>
+        <span class="product-price"></span>
+        <div class="add-clients" >
+            <span class="counter">
+              <button full (click)="add2()">+</button>
+              <span>{{counter2}}</span>
+              <button full (click)="remove2()">-</button>
+            </span>
+
+
+          </div>
+
+
+</ion-item>
+
+
+
+
+
+
+
+

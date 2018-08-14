@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{ 'confirmDelivery-title' | translate }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <p class="CollectionElement">{{ 'confirmDelivery-subTitle' | translate }}:</p>
+  <ion-row *ngIf="selected_Items.length >= 0">
+    <ion-col col-12 *ngFor="let item of selected_Items">
+      <item [item]="item" [order_type]="2" (change_Kilo_count)="change_Kilo_count($event)" (remove_from_list)="remove_from_list($event)" [selected_value]="item.count"></item>
+    </ion-col>
+  </ion-row>
+
+  <ion-row *ngIf="selected_Items.length == 0">
+    <div class="EmptyStatus">
+      <p>
+        {{'noItems' | translate}}
+      </p>
+    </div>
+  </ion-row>
+  <ion-row>
+    <ion-col col-12 class="Padding-top">
+      <a (click)="edit_items()">+ {{ 'confirmDelivery-edit-items' | translate }}</a>
+    </ion-col>
+
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+  
+      <button ion-button color="danger" (click)="back()" full>{{ 'complete' | translate }}</button>
+  
+  </ion-row>
+</ion-footer>

@@ -1,0 +1,38 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title> {{ 'BENIFITS_TITLE' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <div class="Header__benifits" text-center>
+  <img src="assets/images/icon-1.png" alt="">
+
+  <h6>   <ion-icon name="star"></ion-icon>
+    <ion-icon name="star"></ion-icon>
+    <ion-icon name="star"></ion-icon>
+    {{ 'BENIFITS_HEADER' | translate }} <ion-icon name="star"></ion-icon>
+     <ion-icon name="star"></ion-icon>
+     <ion-icon name="star"></ion-icon>
+    </h6>
+ </div>
+ <ion-grid>
+   <ion-row>
+
+     <ion-col col-12 *ngFor="let infor of Information">
+       <benifits [singleinformation]=infor></benifits> 
+     </ion-col>
+
+   </ion-row>
+ </ion-grid>
+ <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+  <ion-infinite-scroll-content
+    loadingSpinner="bubbles"
+    loadingText="{{'loadingText'|translate}}">
+  </ion-infinite-scroll-content>
+</ion-infinite-scroll>
+</ion-content>

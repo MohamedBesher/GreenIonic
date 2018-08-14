@@ -1,0 +1,53 @@
+<ion-content  padding center text-center class="LoginBackground">
+  <ion-title>
+    <img src="assets/images/logo-2.png">
+  </ion-title>
+  <form [formGroup]="credentialsForm">
+  <div class="backGround">
+    <div class="InputForm">
+      <ion-list>
+        <ion-item>
+          <ion-label floating class="Icons">
+            <ion-icon name="phone-portrait"></ion-icon> {{ 'Login-PhoneNumber' | translate }} </ion-label>
+          <ion-input type="number" [(ngModel)]="user.phone_number"  [formControl]="credentialsForm.controls['phone_number']"></ion-input>
+        </ion-item>
+         <!-- Validation -->
+<div class="validation" *ngIf="!credentialsForm.controls.phone_number.valid &&
+(credentialsForm.controls.phone_number.dirty || submitted)" >
+
+  <span>{{ 'Login-PhoneNumberValidation' | translate }}</span>
+
+</div>
+
+        <ion-item>
+          <ion-label floating class="Icons">
+            <ion-icon name="lock"></ion-icon> {{ 'Login-Password' | translate }} </ion-label>
+
+          <ion-input [(ngModel)]="user.password"  [formControl]="credentialsForm.controls['password']" type="password"></ion-input>
+        </ion-item>
+
+        <div class="validation" *ngIf="!credentialsForm.controls.password.valid &&
+        (credentialsForm.controls.password.dirty || submitted)" >
+          <span>{{ 'Login-PasswordValidation' | translate }}</span>
+        
+        </div>
+      </ion-list>
+      <a class="ForgetPassword" (click)="ForgetPassword()">{{ 'Login-Forgetpassword' | translate }}</a>
+    </div>
+    <button [disabled]='!credentialsForm.valid || clicked' ion-button round full color="secondary" class="login_button" (click)="submit()">{{ 'Login-Login' | translate }}</button>
+    <p class="user_link" (click)="GOhome()">{{ 'Login-Skip' | translate }}
+      <a>{{ 'Login-visitor' | translate }} </a>
+    </p>
+
+    <p>{{ 'Login-haveAccount' | translate }}
+      <a class="register_link" (click)="Goregister()">{{ 'Login-RegisterNow' | translate }}</a>
+    </p>
+  </div>
+</form>
+
+
+
+</ion-content>
+
+
+

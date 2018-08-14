@@ -1,0 +1,113 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title> {{'OrderDetails-title'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card class="Card_height" *ngFor="let Box of boxes">
+          <ion-item>
+            <ion-avatar item-start>
+              <img [src]="photoUrl+Box.image" onError="this.src='assets/images/green-2.png';" class="Product__image">
+            </ion-avatar>
+            <h2 class="Collection-name"> {{Box.name}}</h2>
+            <p class="truncate">{{Box.description.substr(0,Box.description.lastIndexOf(','))}}</p>
+            <p class="details-p">
+              <span class="product-price">{{Box.price}} {{'OurCollection-currency'|translate}}</span>
+            </p>
+            <div class="add-clients">
+
+              <button ion-button clear item-end class="more__button" (click)="itemDetails(Box.id)">{{'MyOrder-more'|translate}}</button>
+
+            </div>
+          </ion-item>
+          <ion-fab right top class="packageSize" *ngIf='Box.type!="تشكيلة"'>
+            <button ion-fab>{{Box.size}} {{'kilo'|translate}}</button>
+          </ion-fab>
+        </ion-card>
+
+      </ion-col>
+
+      <ion-col col-12>
+        <p class="MinOrder" text-center="" *ngIf="details_of_orderType!=2">{{'OrderDetails-MsgCancel'|translate}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let Details of details_of_order">
+      <ion-col col-6>
+        <span>{{'OrderDetails-DelPrice'|translate}}:</span>
+      </ion-col>
+      <ion-col col-6 class="text-right">
+        <span> {{Details.deliever}} {{'OurCollection-currency'|translate}}</span>
+      </ion-col>
+      <ion-col col-6>
+        <span>{{'OrderDetails-TOTAL'|translate}} :</span>
+      </ion-col>
+      <ion-col col-6 class="text-right">
+        <span>{{Details.total}} {{'OurCollection-currency'|translate}}</span>
+      </ion-col>
+      <ion-col col-6>
+        <span>{{'OrderDetails-Order_type'|translate}} :</span>
+      </ion-col>
+      <ion-col col-6 class="text-right" *ngIf="Details.type==0">
+        <span>{{'Home-sub'|translate}}</span>
+      </ion-col>
+      <ion-col col-6 class="text-right" *ngIf="Details.type==1">
+        <span>{{'Home-order'|translate}}</span>
+      </ion-col>
+      <ion-col col-6 class="text-right" *ngIf="Details.type==2">
+        <span>{{'Home-conveyance'|translate}}</span>
+      </ion-col>
+
+    </ion-row>
+    <p class="Delivery__Color">{{'OrderDetails-Delivery_Schedule'|translate}}</p>
+    <ion-row class="Delivery__Schedule">
+      <ion-col col-6>
+        <b>{{'OrderDetails-Status'|translate}}</b>
+      </ion-col>
+      <ion-col col-6>
+        <b>{{'OrderDetails-Delivery_date'|translate}}</b>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let time of deliveryTime">
+      <ion-col col-6 *ngIf="time.status==2">
+        <ion-icon name="checkmark-circle" class="Confirmed_Icon"></ion-icon> {{'OrderDetails-Deliverd'|translate}}
+      </ion-col>
+      <ion-col col-6 *ngIf="time.status==0">
+        <ion-icon name="information-circle" class="wating__Icon"></ion-icon> {{'OrderDetails-Waiting'|translate}}
+      </ion-col>
+      <ion-col col-6 *ngIf="time.status==1">
+        <ion-col col-6>
+          <ion-icon name="close" class="Cancel__Icon"></ion-icon> {{'OrderDetails-Canceled'|translate}}</ion-col>
+      </ion-col>
+      <ion-col col-6>
+        <ion-icon name="calendar"></ion-icon> {{time.deliever_time}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+
+  <ion-row >
+            
+    <ion-col col-6 *ngIf="details_of_orderType!==2&&status!==2">
+      <button ion-button color="secondary" full (click)="$ionicGoBack()">{{'OrderDetails-Back'|translate}}</button>
+
+    </ion-col>
+    <ion-col col-6 *ngIf="details_of_orderType!==2&&status!==2">
+      <button ion-button color="danger" full (click)="cancel()">{{'OrderDetails-Cancel'|translate}}</button>
+    </ion-col>
+    <ion-col col-12 *ngIf="details_of_orderType===2||status===2">
+      <button ion-button color="secondary" full (click)="$ionicGoBack()">{{'OrderDetails-Back'|translate}}</button>
+
+    </ion-col>
+  </ion-row>
+
+</ion-footer>

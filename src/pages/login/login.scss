@@ -1,0 +1,59 @@
+
+
+    page-login {
+      
+      .LoginBackground{
+        background-image: url("../assets/images/bg_login.jpg");
+        background-size: cover;
+      }
+      .scroll-content{
+        padding-bottom: 0 !important;
+        }
+      .InputForm{
+        padding-top:10px;
+        padding-bottom:20px;
+        // background-color: #fff;
+        }
+      ion-title img{
+        // margin-top:10vh;
+        // margin-bottom:5vh;
+        width: 141px;
+      }
+      .login_button{
+        margin-top: 17px;
+        margin-bottom: 20px;
+      }
+    .user_link{
+      margin-top: 8%;
+    }
+    .register_link{
+      color:#ff1e1e;
+    }
+    .item-block:first-child {
+     border-top: 0.55px solid transparent !important;
+    }
+    .ForgetPassword{
+      float: right;
+      color: #696969;
+    }
+    // .Icons{
+    //   color: #696969;
+    // }
+    .item-md,.item-ios{
+      padding-left: 0 !important;
+      background:transparent !important
+    }
+    .validation{
+      text-align: right;
+      padding-right: 18px;
+      padding-left: 18px;
+    }
+    .validation span{
+      color: red;
+    }
+    
+    }
+    
+      
+
+

@@ -1,0 +1,94 @@
+product {
+  ion-card-content {
+    padding: 13px 7px !important;
+  }
+  .CardSize {
+    height: 208px;
+  }
+  .Product__image {
+    width: 85px;
+    margin: auto;
+    padding: 5px;
+    height: 85px;
+  }
+  .details-p {
+    padding-bottom: 10px;
+  }
+  .product-price-old {
+    color: #999999;
+    font-size: 12px;
+    text-decoration: line-through; // padding-left: 15px;
+  }
+  .product-price {
+    font-weight: bold;
+    color: #ffb424 !important;
+    font-size: 12px;
+  }
+  .Kilo {
+    font-size: 12px;
+    color: red;
+  }
+  .Amount {
+    font-size: 11px;
+  }
+  .ProductExpired {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+  }
+  .Expired {
+    position: absolute;
+    background: rgba(194, 197, 194, 0.75);
+    left: 28px;
+    right: 10px;
+    top: 11px;
+    width: 93%;
+    height: 83%;
+    z-index: 1;
+    text-align: center;
+    font-size: 32px;
+    color: #f54545;
+    line-height: 4.5em;
+  }
+  .add-clients {
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 100% !important;
+    .counter {
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+      background: #2bc73b;
+      border-top-right-radius: 17px;
+      border-bottom-right-radius: 17px;
+      border-top-left-radius: 17px;
+      text-align: center;
+      border-bottom-left-radius: 17px;
+      color: #fff;
+      font-size: 18px;
+      width: 100%;
+      button {
+        padding: .5rem;
+        background: #2bc73b;
+        padding-left: 9px;
+        padding-right: 10px;
+        color: #fff;
+        &:first-of-type {
+          border-top-right-radius: 50%;
+          border-bottom-right-radius: 50%;
+          border-left: 1px solid;
+          float: right;
+        }
+        &:last-of-type {
+          border-top-left-radius: 50%;
+          border-bottom-left-radius: 50%;
+          border-right: 1px solid;
+          float: left;
+        }
+      }
+      span {
+        margin: 0 0.5rem
+      }
+    }
+  }
+}

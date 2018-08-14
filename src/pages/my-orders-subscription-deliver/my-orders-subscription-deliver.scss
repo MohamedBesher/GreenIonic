@@ -1,0 +1,63 @@
+page-my-orders-subscription-deliver {
+  .SwipedTabs-indicatorSegment
+  {
+      -webkit-transition: 0.3s all;
+      -moz-transition:  0.3s all;
+      -o-transition:  0.3s all;
+      transition:  0.3s all;
+      transform-origin: top 0 left 0;
+      height: 1px;
+    position: relative;
+    top: -2px;
+    // background-color: #924f08  !important;
+  }
+  .swiper-slide{
+    -webkit-align-items: inherit;
+  }
+  .FixedOrderTabs{
+position:fixed;
+z-index: 11;
+background:#fff;
+  }
+  .Margin_top{
+    margin-top: 33px;
+  }
+  .SwipedTabs-tabs ion-segment-button
+  {
+    border:none !important;
+    color:gray!important;
+    background-color:white!important;
+  }
+  .Emptyt__status{
+    padding-top: 13vh;
+    text-align: center;
+  }
+   .SwipedTabs-tabs ion-segment-button.SwipedTabs-activeTab
+  {
+      color:#924f08  !important;
+  }
+  .SwipedTabs-tabs
+  {
+    border-bottom: solid 1px #e6e6e6  !important;
+  }
+  .swiper-container{
+    height: 100% !important;
+    overflow: visible;
+  }
+  .tabsOrder .segment .segment-button.segment-activated{
+    border-color: #af9e29;
+    color: #af9e29;
+  }
+  .tabsOrder .segment-md .segment-button{
+color: gray
+  }
+  .tabsOrder {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background: white;
+  }
+  .Container_padding{
+    padding-top: 50px;
+  }
+}

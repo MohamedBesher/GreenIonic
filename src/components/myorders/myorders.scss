@@ -1,0 +1,132 @@
+myorders {
+
+
+    .Order__Type {
+      width: 207px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #1fa076;
+      font-size: 17px;
+      padding-bottom: 10px;
+    }
+    .Details__order{
+      font-size: 13px;
+      color: #7d7c7c;
+    }
+  
+    .Product__image{
+    //   width: 85px;
+      padding: 8px;
+      float: left
+  }
+  ion-avatar{
+    margin: 0 !important;
+  }
+  .item-md ion-avatar img {
+    border-radius: 0 !important;
+    width: 53px !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin-right: 10px;
+  }
+  
+    .more__button{
+      float: right;
+      margin-top: -9px;
+      text-align: right;
+      color: #e622ba;
+  
+    }
+    ion-fab[right] {
+      right: 0;}
+  
+   .Confirmed_button {
+      margin-top: -9px;
+      color: #ffffff;
+      font-size: 12px;
+      background: #42d2c4;
+    }
+  
+    .wating__button{
+      margin-top: -9px;
+      color: #ffffff;
+      font-size: 12px;
+      background: #e4be34;
+    }
+    .Cancel__button{
+      margin-top: -9px;
+      color: #ffffff;
+      font-size: 12px;
+      background: red;
+    }
+  .Order-details{
+      float: left
+  }
+      .details-p{
+          padding-bottom: 10px;
+      }
+      .product-price-old {
+          color: #999999;
+          font-size: 12px;
+          text-decoration: line-through;
+          // padding-left: 15px;
+      }
+      .product-price {
+          font-weight: bold;
+          color: #ffb424 !important;
+          font-size: 12px;
+      }
+      .Kilo{
+          font-size: 12px;
+          color: red;
+      }
+      .Amount{
+          font-size: 11px;
+  
+      }
+  
+      .add-clients{
+          justify-content: space-around;
+          align-items: center;
+          float: left;
+               padding-bottom: 21px;
+                      width: 100% !important;
+          .counter{
+  
+              padding-top: .5rem;
+              padding-bottom: .5rem;
+              background: #2bc73b;
+              border-top-right-radius: 17px;
+              border-bottom-right-radius: 17px;
+              border-top-left-radius: 17px;
+              text-align: center;
+              border-bottom-left-radius: 17px;
+              color: #fff;
+  
+              button{
+                  padding: .5rem;
+                  background: #2bc73b;
+  
+                  padding-left: 9px;
+                  padding-right: 10px;
+                  color: #fff;
+                  &:first-of-type{
+                      border-top-left-radius: 50%;
+                      border-bottom-left-radius: 50%;
+                      border-right: 1px solid;
+                  }
+                  &:last-of-type{
+                      border-top-right-radius: 50%;
+                      border-bottom-right-radius: 50%;
+                      border-left: 1px solid;
+                  }
+              }
+              span{
+                  margin: 0 1.5rem
+              }
+          }
+      }
+  }
+  
+  

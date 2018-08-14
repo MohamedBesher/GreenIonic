@@ -1,0 +1,99 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{'MyOrder-title'|translate}}</ion-title>
+    <ion-buttons end>
+      <button class="Social__share">
+        <ion-icon name="share" (click)="shareLink()"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="tabsOrder">
+       
+        <ion-segment [(ngModel)]="view_orders">
+          <ion-segment-button value="0" (click)="checkIndex(0)">
+              {{'Home-sub'|translate}}
+          </ion-segment-button>
+          <ion-segment-button value="1" (click)="checkIndex(1)">
+              {{'Home-order'|translate}}
+          </ion-segment-button>
+          <ion-segment-button value="2" (click)="checkIndex(2)">
+              {{'Home-conveyance'|translate}}
+            </ion-segment-button>
+        </ion-segment>
+      </div>
+      
+      <div [ngSwitch]="view_orders" class="Container_padding">
+        <div *ngSwitchCase="'0'">
+          
+            <ion-row class="My__orders__style">
+                <ion-col col-12>
+                  <ion-card class="Card_height" *ngFor="let order of Order">
+                    <myorders [singleOrder]="order" [indexType]="indexSelected"></myorders>
+                  </ion-card>
+        
+        
+                </ion-col>
+              </ion-row>
+        
+              <div class="Emptyt__status" *ngIf="HideSub">
+                <img src="assets/images/upload_release-128.png">
+                <p>{{'MyOrder-No_Sub'|translate}}</p>
+              </div>
+              <ion-infinite-scroll *ngIf="doInfiniteSub" (ionInfinite)="doInfinite($event)">
+                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'loadingText'|translate}}">
+                </ion-infinite-scroll-content>
+              </ion-infinite-scroll>
+
+        </div>
+      
+        <div *ngSwitchCase="'1'">
+            <ion-row class="My__orders__style">
+                <ion-col col-12>
+                  <ion-card class="Card_height" *ngFor="let order of Order">
+                    <myorders [singleOrder]="order" [indexType]="indexSelected"></myorders>
+                  </ion-card>
+        
+        
+                </ion-col>
+              </ion-row>
+        
+              <div class="Emptyt__status" *ngIf="HideOrder">
+                <img src="assets/images/upload_release-128.png">
+                <p>{{'MyOrder-No_Pre-order'|translate}}</p>
+              </div>
+              <ion-infinite-scroll *ngIf="doInfiniteOrder" (ionInfinite)="doInfinite($event)">
+                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'loadingText'|translate}}">
+                </ion-infinite-scroll-content>
+              </ion-infinite-scroll>
+          
+        </div>
+        <div *ngSwitchCase="'2'">
+            <ion-row class="My__orders__style">
+                <ion-col col-12>
+                  <ion-card class="Card_height" *ngFor="let order of Order">
+                    <myorders [singleOrder]="order" [indexType]="indexSelected"></myorders>
+                  </ion-card>
+        
+        
+                </ion-col>
+              </ion-row>
+              <div class="Emptyt__status" *ngIf="HideConv">
+                <img src="assets/images/payment-128.png">
+                <p>{{'MyOrder-No_conveyance'|translate}}</p>
+              </div>
+              <ion-infinite-scroll *ngIf="doInfiniteDeli" (ionInfinite)="doInfinite($event)">
+                <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="{{'loadingText'|translate}}">
+                </ion-infinite-scroll-content>
+              </ion-infinite-scroll>
+          
+        </div>
+      </div>
+
+
+</ion-content>

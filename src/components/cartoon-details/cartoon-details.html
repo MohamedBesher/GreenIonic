@@ -1,0 +1,17 @@
+<ion-item>
+  <ion-avatar item-start>
+    <img [src]="photoUrl+detailsCartoon.image" class="Product__image">
+  </ion-avatar>
+
+  <p class="truncate"> {{detailsCartoon.name}}</p>
+
+        <span class="Amount">{{'CartoonDetails-Amount'|translate}}:{{detailsCartoon.kilo}}{{typeUnit}}</span>
+        <p class="details-p">
+          <span class="product-price-old"> {{detailsCartoon.price}} </span>
+            <!-- <span class="product-price">$139.98</span> -->
+        </p>
+      
+ 
+
+
+</ion-item>

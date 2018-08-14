@@ -1,0 +1,22 @@
+<ion-header>
+
+    <ion-navbar color="secondary">
+      <ion-title> {{'CartoonDetails-Title'|translate}}</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content > 
+    <ion-row>
+      <ion-col col-12 >
+         <ion-card class="Card_height" *ngFor="let DItems of items">
+             <order-items-details [detailsItems]="DItems"></order-items-details>
+           </ion-card>
+  
+  
+        </ion-col>
+  
+     </ion-row>
+  
+  </ion-content>

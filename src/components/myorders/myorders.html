@@ -1,0 +1,52 @@
+<ion-item>
+  <ion-avatar item-start>
+    <img src="assets/images/ourgroup.png" class="Product__image">
+  </ion-avatar>
+  <ion-fab right top class="Status__button">
+
+    <button ion-button clear item-end class="Confirmed_button"> {{status}}
+    </button>
+  </ion-fab>
+
+  <p class="Order__Type"> {{type}}</p>
+
+</ion-item>
+
+<ion-card-content class="Orders">
+    <p class="Details__order">
+      <ion-icon name="calendar"></ion-icon>
+      <b>{{'MyOrder-Order_date'|translate}} : </b>
+      <span> {{singleOrder.start_date.split(" ")[0]}}</span>
+    </p>
+    <p class="Details__order">
+      <ion-icon name="time"></ion-icon>
+      <b>{{'MyOrder-Order_time'|translate}} : </b>
+      <span>  {{singleOrder.start_date.split(" ")[1]}}</span>
+    </p>
+    <hr>
+    <p class="Details__order">
+      <ion-icon name="calendar"></ion-icon>
+      <b>{{'MyOrder-Deliver_date'|translate}}  : </b>
+      <span> {{singleOrder.deliever_time}} </span>
+    </p>
+    <p class="Details__order" *ngIf="hideDeliverytime">
+      <ion-icon name="time"></ion-icon>
+      <b>{{'MyOrder-Deliver_time'|translate}} : </b>
+      <span> {{singleOrder.time}}</span>
+    </p>
+    <hr>
+
+    <p class="Details__order">
+      <ion-icon name="pin"></ion-icon>
+      <b>{{'MyOrder-Address'|translate}} : </b>
+      <span> {{singleOrder.address}}</span>
+    </p>
+    <p class="Details__order">
+      <b>{{'MyOrder-Payment_method'|translate}}  : </b>
+      <span> {{singleOrder.payment_method}}</span>
+    </p>
+    <p>
+      <button ion-button clear item-end class="more__button" (click)="OrderDetails(singleOrder)" >{{'MyOrder-more'|translate}}</button>
+
+    </p>
+  </ion-card-content>

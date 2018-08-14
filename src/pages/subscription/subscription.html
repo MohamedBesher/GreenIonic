@@ -1,0 +1,163 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title> {{'subscription-Title'|translate}} </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <p>  {{'subscription-subscription_type'|translate}}  </p>
+        <ion-card>
+          <ion-list radio-group [(ngModel)]="SubData.type_join" (ionChange)="checkSub_type()">
+            <ion-row>
+              <ion-col col-12>
+                <ion-item>
+                  <ion-label>{{'subscription-Twice_week'|translate}}</ion-label>
+                  <ion-radio value="2"  ></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col col-12 *ngIf="HideDayTwice">
+                <ion-item>
+                  <ion-label>{{'subscription-first_day'|translate}}</ion-label>
+                  <ion-select interface="action-sheet" [(ngModel)]="filterDay" (ionChange)="Dayfilter(filterDay);">
+                    <ion-option value="1">{{'subscription-satDay'|translate}}</ion-option>
+                    <ion-option value="2">{{'subscription-sunDay'|translate}}</ion-option>
+                    <ion-option value="3">{{'subscription-monDay'|translate}}</ion-option>
+                    <ion-option value="4">{{'subscription-tuseDay'|translate}}</ion-option>
+                    <ion-option value="5">{{'subscription-wednDay'|translate}}</ion-option>
+                    <ion-option value="6">{{'subscription-thursDay'|translate}}</ion-option>
+                    <ion-option value="7">{{'subscription-friDay'|translate}}</ion-option>
+                  </ion-select>
+                  
+                </ion-item>
+              </ion-col>
+              <ion-col col-12 *ngIf="HideDayTwice"> 
+                <ion-item>
+                  <ion-label>{{'subscription-second_day'|translate}}</ion-label>
+                  <ion-select interface="action-sheet" [(ngModel)]="filterDaySecond" (ionChange)="Dayfilter(filterDaySecond);">
+                    <ion-option value="1">{{'subscription-satDay'|translate}}</ion-option>
+                    <ion-option value="2">{{'subscription-sunDay'|translate}}</ion-option>
+                    <ion-option value="3">{{'subscription-monDay'|translate}}</ion-option>
+                    <ion-option value="4">{{'subscription-tuseDay'|translate}}</ion-option>
+                    <ion-option value="5">{{'subscription-wednDay'|translate}}</ion-option>
+                    <ion-option value="6">{{'subscription-thursDay'|translate}}</ion-option>
+                    <ion-option value="7">{{'subscription-friDay'|translate}}</ion-option>
+                  </ion-select>
+                 
+                </ion-item>
+                <p class="Validate" *ngIf="SameDayValidation">{{'subscription-SameDayValidation'|translate}}</p>
+                <p class="Validate" *ngIf="HideDay">{{'subscription-DayValidation'|translate}}</p>
+              </ion-col>
+
+
+            </ion-row>
+            <ion-row>
+              <ion-col col-12>
+                <ion-item>
+                  <ion-label>{{'subscription-Onceweek'|translate}} </ion-label>
+                  <ion-radio value="1" ></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col col-12 *ngIf="HideDayOnce">
+                <ion-item>
+                  <ion-label>{{'subscription-select_day'|translate}}</ion-label>
+                  <ion-select interface="action-sheet" [(ngModel)]="filterDayOnce" (ionChange)="Dayfilter(filterDayOnce);">
+                    <ion-option value="1">{{'subscription-satDay'|translate}}</ion-option>
+                    <ion-option value="2">{{'subscription-sunDay'|translate}}</ion-option>
+                    <ion-option value="3">{{'subscription-monDay'|translate}}</ion-option>
+                    <ion-option value="4">{{'subscription-tuseDay'|translate}}</ion-option>
+                    <ion-option value="5">{{'subscription-wednDay'|translate}}</ion-option>
+                    <ion-option value="6">{{'subscription-thursDay'|translate}}</ion-option>
+                    <ion-option value="7">{{'subscription-friDay'|translate}}</ion-option>
+                  </ion-select>
+                  
+                </ion-item>
+                <p class="Validate" *ngIf="HideDay">{{'subscription-DayValidation'|translate}}</p>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12>
+                  <ion-item>
+                    <ion-label>{{'subscription-fortnightly'|translate}} </ion-label>
+                    <ion-radio value="3"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col col-12 *ngIf="HideDayfortnightly">
+                  <ion-item>
+                    <ion-label>{{'subscription-select_day'|translate}}</ion-label>
+                    <ion-select interface="action-sheet" [(ngModel)]="filterDayfortnightly" (ionChange)="Dayfilter(filterDayfortnightly);">
+                      <ion-option value="1">{{'subscription-satDay'|translate}}</ion-option>
+                      <ion-option value="2">{{'subscription-sunDay'|translate}}</ion-option>
+                      <ion-option value="3">{{'subscription-monDay'|translate}}</ion-option>
+                      <ion-option value="4">{{'subscription-tuseDay'|translate}}</ion-option>
+                      <ion-option value="5">{{'subscription-wednDay'|translate}}</ion-option>
+                      <ion-option value="6">{{'subscription-thursDay'|translate}}</ion-option>
+                      <ion-option value="7">{{'subscription-friDay'|translate}}</ion-option>
+                    </ion-select>
+                    
+                  </ion-item>
+                  <p class="Validate" *ngIf="HideDay">{{'subscription-DayValidation'|translate}}</p>
+                </ion-col>
+              </ion-row>
+          </ion-list>
+
+        </ion-card>
+        <p class="Validate" *ngIf="HideType">{{'subscription-TypeSubValidation'|translate}}</p>
+      </ion-col>
+
+      <ion-col col-12>
+          <p>{{'subscription-subscription_duration'|translate}}
+            </p>
+          <ion-card>
+            <ion-list radio-group [(ngModel)]="SubData.time" (ionChange)="onChange()">
+              <ion-item *ngIf="hideWeek">
+                <ion-label> {{'subscription-week'|translate}} </ion-label>
+                <ion-radio value="1"></ion-radio>
+              </ion-item>
+              <ion-item *ngIf="hideTwoWeek">
+                <ion-label>{{'subscription-Twoweek'|translate}}</ion-label>
+                <ion-radio value="2"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>{{'subscription-Month'|translate}}</ion-label>
+                <ion-radio value="3"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>{{'subscription-Twomonths'|translate}}</ion-label>
+                <ion-radio value="4" ></ion-radio>
+              </ion-item>
+  
+            </ion-list>
+  
+          </ion-card>
+          <p class="Validate" *ngIf="HideDuration">{{'subscription-PeriodSubValidation'|translate}}</p>
+        </ion-col>
+
+
+      <ion-col col-12>
+        <p>{{'subscription-subscription_delivery_time'|translate}} </p>
+        <ion-card>
+          <ion-list radio-group>
+            <ion-item *ngFor="let dur of Durations">
+              <ion-label> {{dur.name}}</ion-label>
+              <ion-radio [value]="dur.id" (ionSelect)="checkTime(dur.id)"></ion-radio>
+            </ion-item>
+
+          </ion-list>
+
+        </ion-card>
+        <p class="Validate" *ngIf="HideTime">{{'subscription-PeriodDelValidation'|translate}}</p>
+        <button ion-button round full color="secondary" (click)="OurCollections()">{{'subscription-subscriptionButton'|translate}}</button>
+      </ion-col>
+
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

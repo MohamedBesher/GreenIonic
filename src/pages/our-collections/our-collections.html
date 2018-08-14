@@ -1,0 +1,86 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{'OurCollection-Title'|translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-grid>
+      <ion-row class="Check_1">
+         <ion-col col-2>
+          {{'OurCollection-allsize'|translate}}
+         </ion-col>
+
+         <ion-col col-3>
+
+            <ion-label>{{'OurCollection-sizesix'|translate}}</ion-label>
+            <ion-checkbox value="6"   [checked]=sizecheckedsix [(ngModel)]="sizecheckedsix" (ionChange)="filter()"></ion-checkbox>
+
+        </ion-col>
+
+        <ion-col col-3>
+
+            <ion-label>{{'OurCollection-sizenine'|translate}}</ion-label>
+            <ion-checkbox value="9"  [checked]=sizecheckednine [(ngModel)]="sizecheckednine" (ionChange)="filter()"></ion-checkbox>
+
+        </ion-col>
+
+        <ion-col col-4>
+            <ion-label>{{'OurCollection-sizeTwelve'|translate}}</ion-label>
+            <ion-checkbox value="12" [checked]=sizecheckedtwelve [(ngModel)]="sizecheckedtwelve"  (ionChange)="filter()"></ion-checkbox>
+        </ion-col>
+
+      </ion-row>
+      <ion-row class="Check_1">
+        <ion-col col-2>
+          {{'OurCollection-allType'|translate}}
+        </ion-col>
+
+        <ion-col col-3>
+
+           <ion-label>{{'OurCollection-fruitType'|translate}}</ion-label>
+           <ion-checkbox value="1" [checked]=typecheckedFruit [(ngModel)]="typecheckedFruit" (ionChange)="filter()"></ion-checkbox>
+
+       </ion-col>
+
+       <ion-col col-3>
+
+           <ion-label>{{'OurCollection-vegType'|translate}}</ion-label>
+           <ion-checkbox value="2" [checked]=typecheckedVeg [(ngModel)]="typecheckedVeg" (ionChange)="filter()"></ion-checkbox>
+
+       </ion-col>
+
+       <ion-col col-4>
+           <ion-label>{{'OurCollection-fvType'|translate}}</ion-label>
+           <ion-checkbox value="3" [checked]=typecheckedVegFruit [(ngModel)]="typecheckedVegFruit" (ionChange)="filter()"></ion-checkbox>
+       </ion-col>
+
+     </ion-row>
+
+     <ion-row>
+      <ion-col col-12  *ngFor="let Boxes of BoxFilter">
+        <ion-card class="Card_height">
+            <our-collection  [singleCollection]="Boxes"></our-collection>
+          </ion-card>
+       </ion-col>
+     </ion-row>
+<!-- handleError -->
+     <ion-row>
+      <ion-col col-12 >
+        <ion-card class="Card_height">
+       
+        </ion-card>
+       </ion-col>
+     </ion-row>
+
+    </ion-grid>
+    <div class="Validate MarginImg" *ngIf="HideMsg" center text-center> 
+        <img src="assets/images/shopping-512-no.png">
+          <p >{{'OurCollection-NoProduct'|translate}} </p>
+      </div>
+      
+</ion-content>

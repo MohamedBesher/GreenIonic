@@ -1,0 +1,47 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{ 'MakeOrder-Title' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <p>{{'MakeOrder-Day'|translate}} </p>
+        <ion-card>
+          <ion-list radio-group >
+            <ion-item *ngFor="let date of DayDate" >
+              <ion-label>{{date}}</ion-label>
+              <ion-radio [value]="date" (ionSelect)="checkDate(date)"></ion-radio>
+             </ion-item>
+          </ion-list>
+
+        </ion-card>
+        <p class="Validate" *ngIf="HideDate">{{'MakeOrder-DayValidation'|translate}} </p>
+      </ion-col>
+      <ion-col col-12>
+        <p>{{'MakeOrder-Period'|translate}}</p>
+        <ion-card>
+          <ion-list radio-group >
+            <ion-item *ngFor="let delTime of Time">
+              <ion-label> {{delTime.time}} </ion-label>
+              <ion-radio [value]="delTime.id" (ionSelect)="checkTime(delTime.id)" ></ion-radio>
+            </ion-item>
+          </ion-list>
+
+
+        </ion-card>
+        <p class="Validate" *ngIf="HideTime"> {{'MakeOrder-TimeValidation'|translate}}</p>
+
+        <button ion-button round full color="secondary" (click)="Products()">{{'MakeOrder-Next'|translate}}</button>
+      </ion-col>
+
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

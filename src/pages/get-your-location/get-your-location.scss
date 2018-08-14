@@ -1,0 +1,23 @@
+page-get-your-location {
+
+
+  .map-container {
+    height: 100%;
+  }
+
+        .Location__title{
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+
+        #map_canvas {
+         height: 100% !important;
+         width: 100% !important;
+         top: 0;
+         left: 0;
+         min-height: 110px;
+         min-width: 110px;
+         
+        }
+
+}

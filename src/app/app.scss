@@ -1,0 +1,130 @@
+// http://ionicframework.com/docs/theming/
+
+@font-face{
+  font-family: hammersmithone;
+  src: url('../assets/fonts/DIN-NEXT.otf');
+  }
+  ion-footer{
+    background-color: #ffffff !important;
+  }
+  ion-popover{
+    background: rgba(0,0,0,0.5);
+  }
+  *{
+  font-family: hammersmithone;
+  }
+// App Global Sass
+
+// English style
+html[dir="ltr"]{
+  .add-clients .counter button{
+    font-size: 20px;
+  }
+  .add-clients{
+    padding-bottom: 15px;
+  }
+  .validation {
+    text-align: left;
+
+}
+.Status__button{
+  right: -7px !important;
+    left: auto !important;
+    top: -8px !important;
+}
+.Orders{
+  text-align: left;
+}
+.Cartoon_price{
+  float: right;
+}
+}
+
+// Arabic style
+html[dir="rtl"] {
+  .label-md[floating]{
+    transform-origin: right top !important;
+    -webkit-transform-origin: right top !important;
+  }
+  .Orders{
+    text-align: right;
+  }
+  .back-button-icon.icon-md.back-button-icon-md.ion-md-arrow-back {
+  transform: rotate(180deg);
+  }
+.Social__share ion-icon{
+  transform: rotate(180deg);
+}
+.more__button{
+  float: left;
+  
+}
+.text-right{
+  text-align: left;
+  padding-left: 6px;
+
+}
+.packageSize {
+  left: -9px !important;
+  right: auto !important;
+
+}
+.DELEte {
+  left: 4px !important;
+  right: auto !important;}
+
+  .add-clients .counter button:first-of-type{
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 0%;
+    border-bottom-left-radius: 0%;
+    border-left: 1px solid ;
+    border-right: 1px solid transparent ;
+
+
+  }
+  .add-clients .counter button{
+    font-size: 20px;
+  }
+  .add-clients .counter button:last-of-type{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+    border-right: 1px solid ;
+    border-left: 1px solid transparent ;
+  }
+  .add-clients{
+    padding-bottom: 15px;
+  }
+  .Recycle  {
+    left: 10px !important;
+    right: auto !important;
+    top: 0 !important;
+}
+.My__orders__style{
+  direction: rtl;
+}
+.Status__button{
+  left: 0px !important;
+    right: auto !important;
+    top: -8px !important;
+}
+.Cartoon_price{
+  float: left;
+}
+
+
+.bar-button-md[icon-only] ion-icon{
+  transform: rotate(180deg);
+  width: 48px;
+  
+}
+  }
+
+ .padding-x{
+   padding: 0 1.5rem
+ }
+ .margin-x{
+   margin: 0 1.5rem
+ } 

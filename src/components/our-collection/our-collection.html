@@ -1,0 +1,19 @@
+<ion-item (click)="BoxDetails(singleCollection)">
+  <ion-avatar item-start>
+    <img [src]="photoUrl+singleCollection.image" class="Product__image">
+  </ion-avatar>
+  <h2 class="Collection-name" > {{singleCollection.name}}</h2>
+  <p class="truncate">{{singleCollection.description}}</p>
+  <p class="details-p" >
+    <span class="product-price">{{singleCollection.total}} {{'OurCollection-currency'|translate}}</span>
+  </p>
+  <div class="add-clients" >
+
+      <button ion-button clear item-end class="more__button" (click)="choosePackage(singleCollection); $event.stopPropagation()" >{{'OurCollection-choose'|translate}}</button>
+
+    </div>
+</ion-item>
+<ion-fab right top class="packageSize">
+  <button ion-fab >{{singleCollection.size}} {{'OurCollection-kilo'|translate}}</button>
+</ion-fab>
+

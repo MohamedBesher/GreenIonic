@@ -1,0 +1,40 @@
+
+         <div class="Expired" *ngIf="!delivery_status"> <h2>{{ 'Expired' | translate }}</h2></div>
+          <ion-card class="CardSize" >
+
+<!-- ProductExpired -->
+<img [src]="photoUrl+image" class="Product__image" [class.ProductExpired]="!delivery_status" onError="this.src='assets/images/default.png';">
+
+      <ion-card-content>
+
+        <h2>{{name}} <span class="Kilo">{{ kilo_unit==1 ? ('per-kilo' | translate): ('per-unit'| translate)   }}</span></h2>
+        <p class="details-p">
+          <span class="product-price-old" *ngIf="order_type==1 && deliever_priceAfterDiscount!=0">{{deliever_price}} {{ 'RS' | translate }} </span>
+          <span class="product-price" *ngIf="order_type==1 && deliever_priceAfterDiscount!=0"> {{deliever_priceAfterDiscount}} {{ 'RS' | translate }} </span>
+          <span class="product-price" *ngIf="order_type==1 && deliever_priceAfterDiscount==0" >{{deliever_price}} {{ 'OurCollection-currency' | translate }} </span>
+
+
+          <span class="product-price" *ngIf="order_type==2">{{price}} {{ 'RS' | translate }} </span>
+
+
+
+
+
+        </p>
+        <span class="product-price"></span>
+        <div class="add-clients" >
+            <span class="counter">
+              <button full (click)="add(id)" [disabled]="!delivery_status">+</button>
+              <span>{{counter}}</span>
+              <button full (click)="remove(id)" [disabled]="!delivery_status">-</button>
+            </span>
+          </div>
+
+        <!-- <button ion-button clear item-end>المزيد</button> -->
+      </ion-card-content>
+
+   
+
+</ion-card>
+
+

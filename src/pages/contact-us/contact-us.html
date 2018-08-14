@@ -1,0 +1,67 @@
+<ion-header >
+  <ion-navbar color="secondary">
+    <ion-title>
+    {{'ContactUs-title'|translate}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+          <ion-col class="marginIcon" text-center col-12  >
+              <a  class="Icon Icon__Twitter" href="https://twitter.com/Akhdar_Co">  <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+              <a  class="Icon Icon-snapchat-ghost" href="https://www.snapchat.com/add/akhdar_co">  <ion-icon name="logo-snapchat"></ion-icon>
+              </a>
+              <a  class="Icon Icon-whats" href="https://api.whatsapp.com/send?phone=+966539333071&text=Welcome">    <ion-icon name="logo-whatsapp"></ion-icon>
+
+              </a>
+
+          </ion-col>
+<ion-col col-12>
+  <form [formGroup]="credentialsForm" (ngSubmit)="submit()" >
+    <ion-col col-12>
+       <h6>{{'ContactUs-sendCS'|translate}} </h6>
+      <ion-list>
+        <ion-item>
+            <ion-label floating> {{'ContactUs-name'|translate}}</ion-label>
+          <ion-input type="text"   [(ngModel)]="user.name"  [formControl]="credentialsForm.controls['name']" ></ion-input>
+        </ion-item>
+
+        <div class="validation" *ngIf="!credentialsForm.controls.name.valid &&
+        (credentialsForm.controls.name.dirty || submitted ||touched)" >
+
+          <span>{{ 'SignUp-nameValidation' | translate }}</span>
+
+        </div>
+        <ion-item>
+            <ion-label floating >{{'ContactUs-mail'|translate}}</ion-label>
+
+          <ion-input type="text" [(ngModel)]="user.email"  [formControl]="credentialsForm.controls['email']" ></ion-input>
+        </ion-item>
+
+        <div class="validation" *ngIf="!credentialsForm.controls.email.valid &&
+        (credentialsForm.controls.email.dirty || submitted ||touched)" >
+
+          <span>{{ 'EditProfile-emailValidation' | translate }}</span>
+
+        </div>
+        <ion-item>
+            <ion-label floating >{{'ContactUs-description'|translate}}</ion-label>
+          <ion-textarea [(ngModel)]="user.message"  [formControl]="credentialsForm.controls['message']" ></ion-textarea>
+        </ion-item>
+      </ion-list>
+
+
+      <button  [disabled]='!credentialsForm.valid' ion-button round full color="secondary" class="login_button" >{{'ContactUs-send'|translate}}</button>
+
+
+    </ion-col>
+  </form>
+</ion-col>
+
+        </ion-row>
+
+      </ion-grid>
+</ion-content>

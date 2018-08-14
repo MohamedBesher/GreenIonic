@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>{{ 'EditProfile-Edit' | translate }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding >
+<p class="Padding__Register">{{ 'EditProfile-EditProfile' | translate }}</p>
+
+<form [formGroup]="credentialsForm" (ngSubmit)="submit()">
+
+<ion-list>
+  <ion-item>
+      <ion-label floating class="Icons">
+        <ion-icon name="person"></ion-icon> {{ 'EditProfile-name' | translate }}</ion-label>
+      <ion-input type="text" [(ngModel)]="user.name"  [formControl]="credentialsForm.controls['name']"></ion-input>
+    </ion-item>
+    <div class="validation" *ngIf="!credentialsForm.controls.name.valid &&
+(credentialsForm.controls.name.dirty || submitted ||touched)" >
+
+  <span>{{ 'SignUp-nameValidation' | translate }}</span>
+
+</div>
+    <ion-item>
+        <ion-label floating class="Icons">
+          <ion-icon name="phone-portrait"></ion-icon> {{ 'EditProfile-phone' | translate }}</ion-label>
+        <ion-input [(ngModel)]="user.phone_number"  [formControl]="credentialsForm.controls['phone_number']"  type="text" disabled="true"></ion-input>
+      </ion-item>
+
+<ion-item>
+  <ion-label floating class="Icons">
+    <ion-icon name="mail"></ion-icon> {{ 'EditProfile-email' | translate }}</ion-label>
+  <ion-input type="text" [(ngModel)]="user.email"  [formControl]="credentialsForm.controls['email']"></ion-input>
+</ion-item>
+<div class="validation" *ngIf="!credentialsForm.controls.email.valid &&
+(credentialsForm.controls.email.dirty || submitted ||touched)" >
+
+  <span>{{ 'EditProfile-emailValidation' | translate }}</span>
+
+</div>
+
+</ion-list>
+<button [disabled]='!credentialsForm.valid' ion-button round full color="secondary" class="login_button" type="submit" >{{ 'EditProfile-Editbutton' | translate }}</button>
+</form>
+</ion-content>

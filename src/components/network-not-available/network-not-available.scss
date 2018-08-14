@@ -1,0 +1,19 @@
+network-not-available {
+    text-align: center;
+    .Complete-order{
+        margin: auto;
+        width: 138px;
+        padding-top: 100px;
+    }
+    .Products__links{
+        width: 100%;
+        padding-top: 60px;
+        text-align: center;
+    }
+    .button-Product {
+        display: inline-block;
+        width: 49%;
+        // contain: strict;
+        margin: 0 !important
+    }
+}

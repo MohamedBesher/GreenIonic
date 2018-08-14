@@ -1,0 +1,10 @@
+<ion-tabs [selectedIndex]="selectedIndex"  #myTabs >
+   
+  <ion-tab *ngIf="user" [root]="tab5Root" tabTitle=" {{'TabsPage-Profile' | translate}} " tabIcon="contact" tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab *ngIf="user" [root]="tab4Root" [rootParams]="ordertype" tabTitle=" {{'TabsPage-MyOrders' | translate}} " tabIcon="basket" tabsHideOnSubPages="true"></ion-tab>
+
+  <ion-tab *ngIf="visitor" [root]="tab1Root" tabTitle=" {{'TabsPage-Home' | translate}} " tabIcon="home" tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab *ngIf="visitor" [root]="tab3Root" tabTitle=" {{'TabsPage-Pictures' | translate}} " tabIcon="images" tabsHideOnSubPages="true"></ion-tab>
+  <ion-tab *ngIf="visitor" [root]="tab2Root" tabTitle=" {{'TabsPage-Benifits' | translate}} " tabIcon="heart" tabsHideOnSubPages="true"></ion-tab>
+
+</ion-tabs>

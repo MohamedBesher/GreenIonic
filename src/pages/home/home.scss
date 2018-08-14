@@ -1,0 +1,20 @@
+page-home {
+    ion-slides{
+        // direction: ltr;
+        height: 35%;
+    }
+    .icons__home{
+        padding-top: 8%;
+    }
+    .icons__home [col-4]{
+        border: 1px solid #eeeeee82;
+    }
+    .Version{
+        border:1px dashed #797878;
+        color: #797878;
+        font-size: 13px;
+        font-weight: bold;
+        text-align: center;
+        padding: 9px;
+    }
+}
